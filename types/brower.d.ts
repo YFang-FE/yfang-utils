@@ -32,7 +32,7 @@ export declare function isMobile(): boolean;
  */
 export declare function isSupportWebP(): boolean;
 /**
- * @export 判断是否为PC端
+ * @export 判断当前是否为PC端
  * @return {boolean}
  */
 export declare function IsPC(): boolean;
