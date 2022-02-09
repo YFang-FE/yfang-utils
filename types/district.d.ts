@@ -1,3 +1,6 @@
+/**
+ * DistrictDetail 类型
+ */
 declare type DistrictDetail = {
     label: string;
     value: string;

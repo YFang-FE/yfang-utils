@@ -36,6 +36,7 @@ export function removeCookie(name: string): void {
 }
 
 type SysTem = 'android' | 'ios' | 'other'
+
 /**
  * @export 为判断当前系统 ios 或 android
  */

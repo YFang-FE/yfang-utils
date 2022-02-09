@@ -16,7 +16,7 @@
   },
   "typedocOptions": {
     "entryPoints": ["src/yfang-utils.ts"],
-    "out": "docs"
+    "out": "./docs"
   },
   "include": ["src"]
 }

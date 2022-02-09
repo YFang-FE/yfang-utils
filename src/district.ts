@@ -1,3 +1,6 @@
+/**
+ * DistrictDetail 类型
+ */
 type DistrictDetail = {
   label: string
   value: string
