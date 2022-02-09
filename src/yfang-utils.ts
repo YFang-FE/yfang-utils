@@ -1,6 +1,8 @@
 // Import here Polyfills if needed. Recommended core-js (npm i -D core-js)
 // import "core-js/fn/array.find"
 // ...
+/* istanbul ignore next */
+
 import { isArray, isString, isFunction, type } from './type'
 import { deepClone, isEquals, stringfyQueryString, randomNum, formatDate } from './object'
 import { isPhone, isEmail } from './regexp'

@@ -1,4 +1,4 @@
-import { isArray, isString, isInArray, isFunction } from '../src/utils'
+import { isArray, isString, isFunction, type } from '../src/type'
 
 describe('observe test', () => {
   test('test isArray', () => {
@@ -24,12 +24,48 @@ describe('observe test', () => {
     })
   })
 
-  test('test isInArray', () => {
-    let arr = [1, 2, 3]
-    let arr2 = [1]
+  test('test type', () => {
+    const arr = [
+      {
+        value: 1,
+        type: 'number'
+      },
+      {
+        value: '1',
+        type: 'string'
+      },
+      {
+        value: { a: 1 },
+        type: 'object'
+      },
+      {
+        value: [1],
+        type: 'array'
+      },
+      {
+        value: null,
+        type: 'null'
+      },
+      {
+        value: undefined,
+        type: 'undefined'
+      },
+      {
+        value: () => {},
+        type: 'function'
+      },
+      {
+        value: true,
+        type: 'boolean'
+      },
+      {
+        value: true,
+        type: 'boolean'
+      }
+    ]
     arr.forEach((item: any, index: number) => {
-      if (index === 0) expect(isInArray(arr2, item)).toBeTruthy()
-      else expect(isInArray(arr2, item)).toBeFalsy()
+      expect(type(item.value) === item.type).toBeTruthy()
+      // else expect(isFunction(item)).toBeFalsy()
     })
   })
 })

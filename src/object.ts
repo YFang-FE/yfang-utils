@@ -1,8 +1,12 @@
 /**
- * 深拷贝
- * @export
- * @param {*} data
- * @returns {*}
+ * ```ts
+ * import {deepClone} from 'yfang-utils'
+ * const data = deepClone<{value:string}>({value: 'name'})
+ * ```
+ * @export 深拷贝任意类型数据
+ *
+ * @param data 任意类型数据
+ * @returns
  */
 export function deepClone<T>(data: any): T {
   if (!data || !(data instanceof Object) || typeof data === 'function') {
@@ -19,7 +23,7 @@ export function deepClone<T>(data: any): T {
 }
 
 /**
- * 判断两个变量值是否完全相同
+ * @export 判断两个变量值是否完全相同
  * @param a 任何类型变量
  * @param b 任何类型变量
  */
@@ -36,9 +40,9 @@ export function isEquals(a: any, b: any): boolean {
 }
 
 /**
- * @desc 对象序列化
- * @param  {Object} obj
- * @return {String}
+ * @export 对象序列化
+ * @param obj 任意对象
+ * @return
  */
 export function stringfyQueryString(obj: any): string {
   if (!obj) return ''
@@ -57,20 +61,21 @@ export function stringfyQueryString(obj: any): string {
 }
 
 /**
- * @desc 生成指定范围随机数
- * @param  {Number} min
- * @param  {Number} max
+ * @export 生成指定范围随机数
+ * @param  {Number} min 最小值
+ * @param  {Number} max 最大值
  * @return {Number}
  */
 export function randomNum(min: number, max: number): number {
-  return Math.floor(min + Math.random() * (max - min))
+  if (typeof min === 'number' && typeof max === 'number')
+    return Math.floor(min + Math.random() * (max - min))
+  return 0
 }
 
 /**
- * 时间格式化
- * @export
+ * @export 时间格式化
  * @param {*} date Date对象，string 或 number 的毫秒事件数
- * @param {string} [fmt="yyyy-MM-dd hh:mm:ss"]
+ * @param {string} fmt 格式类型为："yyyy-MM-dd hh:mm:ss"
  * @returns {string}
  */
 export function formatDate(date: any, fmt: string = 'yyyy-MM-dd hh:mm:ss'): string {

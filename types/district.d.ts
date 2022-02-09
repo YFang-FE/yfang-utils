@@ -3,36 +3,36 @@ declare type DistrictDetail = {
     value: string;
 };
 /**
- * 获取省份字符串列表
+ * @export 获取省份字符串列表
  * @returns
  */
 export declare function getProvinces(): string[];
 /**
- * 获取省份列表详情
+ * @export 获取省份列表详情
  * @returns
  */
 export declare function getProvincesDetail(): DistrictDetail[];
 /**
- * 获取省份对应的城市列表
+ * @export 获取省份对应的城市列表
  * @param province 省份名称
  * @returns
  */
 export declare function getCitys(province: string): string[];
 /**
- * 获取省份对应的城市详情列表
+ * @export 获取省份对应的城市详情列表
  * @param province 省份名称，可以为空
  * @param proId 省份id
  * @returns
  */
 export declare function getCitysDetail(province: string, proId?: string): DistrictDetail[];
 /**
- * 获取城市对应的区域列表
+ * @export 获取城市对应的区域列表
  * @param city 城市名称
  * @returns
  */
 export declare function getDistricts(city: string): string[];
 /**
- * 获取城市对应的区域详情列表
+ * @export 获取城市对应的区域详情列表
  * @param city 城市名称
  * @param cid 城市id
  * @returns

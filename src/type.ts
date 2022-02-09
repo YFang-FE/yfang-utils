@@ -1,5 +1,5 @@
 /**
- * 判断是否为数组
+ * @export 判断是否为数组
  * @param obj 任意对象变量
  */
 export function isArray(obj: any): boolean {
@@ -7,26 +7,24 @@ export function isArray(obj: any): boolean {
 }
 
 /**
- * 判斷是否是函數
- * Determine if it is a function
- * @param o {function} 函數
+ * @export 判斷是否是函數
+ * @param o 任意对象变量
  */
 export function isFunction(o: any): boolean {
   return typeof o === 'function'
 }
 /**
- * 判斷是不是字符串
- * Determine if it is a string
- * @param o {string} 字符串
+ * @export 判斷是不是字符串
+ * @param o 任意对象变量
  */
 export function isString(o: any): boolean {
   return typeof o === 'string'
 }
 
 /**
- * @desc 数据类型检测
- * @param obj 待检测的数据
- * @return {String} 类型字符串
+ * @export  数据类型检测
+ * @param obj 任意对象变量
+ * @return 类型字符串
  */
 export function type(obj: any): string {
   var toString = Object.prototype.toString

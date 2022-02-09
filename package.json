@@ -3,25 +3,25 @@
   "version": "1.0.0",
   "description": "",
   "keywords": [],
-  "main": "dist/yfang-utils.umd.js",
-  "module": "dist/yfang-utils.es5.js",
-  "typings": "dist/types/yfang-utils.d.ts",
+  "main": "lib/yfang-utils.umd.js",
+  "module": "lib/yfang-utils.es5.js",
+  "typings": "types/yfang-utils.d.ts",
   "files": [
     "dist"
   ],
   "author": "suporka <zxpscau@163.com>",
   "repository": {
     "type": "git",
-    "url": "https://github.com/zxpsuper/observe"
+    "url": "https://github.com/YFang-FE/yfang-utils"
   },
   "license": "MIT",
   "engines": {
     "node": ">=6.0.0"
   },
   "scripts": {
-    "lint": "tslint  --project tsconfig.json -t codeFrame 'src/**/*.ts' 'test/**/*.ts'",
-    "prebuild": "rimraf dist",
-    "build": "tsc --module commonjs && rollup -c rollup.config.ts",
+    "lint": "tslint --project tsconfig.json -t codeFrame 'src/**/*.ts' 'test/**/*.ts'",
+    "prebuild": "rimraf lib",
+    "build": "tsc --module commonjs && rollup -c rollup.config.ts && typedoc",
     "start": "rollup -c rollup.config.ts -w",
     "test": "jest --coverage",
     "test:watch": "jest --coverage --watch",
@@ -69,7 +69,10 @@
       }
     },
     "collectCoverageFrom": [
-      "src/*.{js,ts}"
+      "src/district.ts",
+      "src/object.ts",
+      "src/regexp.ts",
+      "src/type.ts"
     ]
   },
   "prettier": {
@@ -114,7 +117,7 @@
     "tslint": "^5.11.0",
     "tslint-config-prettier": "^1.15.0",
     "tslint-config-standard": "^8.0.1",
-    "typedoc": "^0.12.0",
-    "typescript": "^3.0.3"
+    "typedoc": "^0.22.11",
+    "typescript": "^4.5.5"
   }
 }
