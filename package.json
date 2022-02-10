@@ -6,6 +6,7 @@
   "main": "lib/yfang-utils.umd.js",
   "module": "lib/yfang-utils.es5.js",
   "typings": "types/yfang-utils.d.ts",
+  "homepage": "https://yfang-fe.github.io/yfang-utils",
   "files": [
     "dist"
   ],
