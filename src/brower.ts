@@ -219,3 +219,37 @@ export function downloadImage(src: string, name?: string) {
     image.src = src
   })
 }
+
+/**
+ * @export 字符串转 xml
+ * @param source xml 字符串
+ * @returns xml 对象
+ */
+export function toXmlDom(source: string) {
+  let xmlDoc = null
+  if ((window as any).ActiveXObject) {
+    let ARR_ACTIVEX = [
+      'MSXML4.DOMDocument',
+      'MSXML3.DOMDocument',
+      'MSXML2.DOMDocument',
+      'MSXML.DOMDocument',
+      'Microsoft.XmlDom'
+    ]
+    let XmlDomflag = false
+    for (let i = 0; i < ARR_ACTIVEX.length && !XmlDomflag; i++) {
+      try {
+        let objXML = new (window as any).ActiveXObject(ARR_ACTIVEX[i])
+        xmlDoc = objXML
+        XmlDomflag = true
+      } catch (e) {}
+    }
+    if (xmlDoc) {
+      xmlDoc.async = false
+      xmlDoc.loadXML(source)
+    }
+  } else {
+    let parser = new DOMParser()
+    xmlDoc = parser.parseFromString(source, 'text/xml')
+  }
+  return xmlDoc
+}

@@ -12,9 +12,9 @@ export function deepClone<T>(data: any): T {
   if (!data || !(data instanceof Object) || typeof data === 'function') {
     return data
   }
-  var constructor = data.constructor
-  var result = new constructor()
-  for (var key in data) {
+  let constructor = data.constructor
+  let result = new constructor()
+  for (let key in data) {
     if (data.hasOwnProperty(key)) {
       result[key] = deepClone(data[key])
     }
@@ -84,7 +84,7 @@ export function formatDate(date: any, fmt: string = 'yyyy-MM-dd hh:mm:ss'): stri
   }
   if (typeof date === 'string' && !/-/.test(date)) date = Number(date)
   date = new Date(date)
-  var o: any = {
+  let o: any = {
     'M+': date.getMonth() + 1, // 月份
     'd+': date.getDate(), // 日
     'h+': date.getHours(), // 小时
@@ -95,7 +95,7 @@ export function formatDate(date: any, fmt: string = 'yyyy-MM-dd hh:mm:ss'): stri
   }
   if (/(y+)/.test(fmt))
     fmt = fmt.replace(RegExp.$1, (date.getFullYear() + '').substr(4 - RegExp.$1.length))
-  for (var k in o) {
+  for (let k in o) {
     if (new RegExp('(' + k + ')').test(fmt))
       fmt = fmt.replace(
         RegExp.$1,
